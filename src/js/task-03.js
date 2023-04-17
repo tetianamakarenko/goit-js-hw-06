@@ -12,3 +12,17 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryElem = document.querySelector(".gallery");
+const createGaleryItemEl = ({url, alt}) => 
+{
+const galleryListEl = 
+`<li class="item"> 
+<img class="img" src="${url}" alt="${alt}" width="500" height="300">
+</li>`;
+galleryElem.insertAdjacentHTML("beforeend", galleryListEl);
+};
+const galleryList = images.map(createGaleryItemEl);
+
+galleryElem.style.display = "inline-flex";
+galleryElem.style.flexWrap = "wrap";
