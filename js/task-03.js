@@ -22,7 +22,11 @@ const galleryListEl =
 </li>`;
 galleryElem.insertAdjacentHTML("beforeend", galleryListEl);
 };
-const galleryList = images.map(createGaleryItemEl);
+
+const galleryList = images
+.map(createGaleryItemEl)
+.join(" ");
 
 galleryElem.style.display = "inline-flex";
 galleryElem.style.flexWrap = "wrap";
+
